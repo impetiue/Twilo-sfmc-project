@@ -101,7 +101,7 @@ exports.execute = function (req, res) {
      console.log("accountSid=>>>>>>>> " + accountSid);
     const authToken = requestBody.authToken;
      console.log("authToken=>>>>>>>>> " + authToken);
-    const to = requestBody.to;
+    const to = '+917219993147';
      console.log("to=>>>>>>>>> " + to);
     const from = requestBody.messagingService;
      console.log("from=>>>>>>>>>>> " + from);
@@ -114,7 +114,7 @@ exports.execute = function (req, res) {
           .create({ 
              body: body,
              from: '(856) 619-7940',
-             to: to
+             to: '+917219993147'
            }) 
           .then(message => console.log(message.sid)) 
           .done();
