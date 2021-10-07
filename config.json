@@ -21,7 +21,7 @@
                 }               
             ],
             "outArguments": [],
-            "url": "https://sfmc-project.herokuapp.com/execute",
+            "url": "https://sfmc-project.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
