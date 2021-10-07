@@ -17,7 +17,7 @@
             "inArguments": [
                 {
                   "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.Twillo_Messaging_DE.Mobile}}" 
+                  "to": "{{Contact.Attribute.Twillo_Messaging_DE.Phone}}" 
                 }               
             ],
             "outArguments": [],
