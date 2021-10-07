@@ -122,8 +122,8 @@ exports.execute = function (req, res) {
 
 
     // FOR TESTING
-    logData(req);
-    res.send(200, 'Publish');
+    // logData(req);
+    // res.send(200, 'Publish');
 
     // Used to decode JWT
     // JWT(req.body, process.env.jwtSecret, (err, decoded) => {
@@ -139,8 +139,8 @@ exports.execute = function (req, res) {
     //         // decoded in arguments
     //         var decodedArgs = decoded.inArguments[0];
             
-    //         logData(req);
-    //         res.send(200, 'Execute');
+            logData(req);
+            res.send(200, 'Execute');
     //     } else {
     //         console.error('inArguments invalid.');
     //         return res.status(400).end();
