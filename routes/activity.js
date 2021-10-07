@@ -109,11 +109,11 @@ exports.execute = function (req, res) {
      console.log("body=>>>>>>>>>>>>>> " + body);
 
     const client = require('twilio')(accountSid, authToken); 
-     
+     console.log("client=>>>>>>>>>>>>>> " + client);
     client.messages 
           .create({ 
              body: body,
-             messagingService: messagingService,
+             from: '+8566197940',
              to: to
            }) 
           .then(message => console.log(message.sid)) 
