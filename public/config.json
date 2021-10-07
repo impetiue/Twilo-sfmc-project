@@ -56,7 +56,7 @@
             "timeout": 2000
        },
        "stop": {
-           "url": "https://sfmc-project.herokuapp.com/journeybuilder/sstop",
+           "url": "https://sfmc-project.herokuapp.com/journeybuilder/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
