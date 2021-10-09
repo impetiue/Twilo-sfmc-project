@@ -95,29 +95,49 @@ exports.execute = function (req, res) {
     console.log("1");	
     //console.log("Executed: "+req.body.inArguments[0]);
     
-    var requestBody = req.body.inArguments[0];
+    // var requestBody = req.body.inArguments[0];
 
-    const accountSid = requestBody.accountSid;
-     console.log("accountSid=>>>>>>>> " + accountSid);
-    const authToken = requestBody.authToken;
-     console.log("authToken=>>>>>>>>> " + authToken);
-    const to = requestBody.to;
-     console.log("to=>>>>>>>>> " + to);
-    const from = requestBody.messagingService;
-     console.log("from=>>>>>>>>>>> " + from);
-    const body = requestBody.body;
-     console.log("body=>>>>>>>>>>>>>> " + body);
+    // const accountSid = requestBody.accountSid;
+    //  console.log("accountSid=>>>>>>>> " + accountSid);
+    // const authToken = requestBody.authToken;
+    //  console.log("authToken=>>>>>>>>> " + authToken);
+    // const to = requestBody.to;
+    //  console.log("to=>>>>>>>>> " + to);
+    // const from = requestBody.messagingService;
+    //  console.log("from=>>>>>>>>>>> " + from);
+    // const body = requestBody.body;
+    //  console.log("body=>>>>>>>>>>>>>> " + body);
 
-    const client = require('twilio')(accountSid, authToken); 
-     console.log("client=>>>>>>>>>>>>>> " + client);
-    client.messages 
-          .create({ 
-             body: body,
-             from: '+18566197940',
-             to: to
-           }) 
-          .then(message => console.log(message.sid)) 
-          .done();
+    // const client = require('twilio')(accountSid, authToken); 
+    //  console.log("client=>>>>>>>>>>>>>> " + client);
+    // client.messages 
+    //       .create({ 
+    //          body: body,
+    //          from: '+18566197940',
+    //          to: to
+    //        }) 
+    //       .then(message => console.log(message.sid)) 
+    //       .done();
+
+    const http = require('http');
+const express = require('express');
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+
+const app = express();
+
+app.post('/sms', (req, res) => {
+  const twiml = new MessagingResponse();
+
+  twiml.message('The Robots are coming! Head for the hills!');
+
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.end(twiml.toString());
+});
+
+http.createServer(app).listen(1337, () => {
+  console.log('Express server listening on port 1337');
+});
+
 
 
 
@@ -184,3 +204,4 @@ exports.validate = function (req, res) {
     logData(req);
     res.send(200, 'Validate');
 };
+
