@@ -119,28 +119,22 @@ exports.execute = function (req, res) {
           .then(message => console.log(message.sid)) 
           .done();*/
 
-var request = require('request');
-var options = {
-  'method': 'POST',
-  'url': 'https://api.amio.io/v1/messages',
-  'headers': {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer b89lWiLK72V66U1TglmWncd322nJQE9nn6S7VJRQrChHPiBBhuwFs52w13ROI2hOfnCNZLGIoF0RzVb3cGBSPu40Ks'
-  },
-  body: JSON.stringify({
-    "channel": {
-      "id": "6873519355419446865"
-    },
-    "contact": {
-      "id": "6873520748825954928"
-    },
-    "content": {
-        "type": "text",
-        "payload": "From SFMC!"
-      }
-  })
+          var request = require('request');
+          var options = {
+            'method': 'POST',
+            'url': 'https://api.amio.io/v1/messages',
+            'headers': {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer b89lWiLK72V66U1TglmWncd322nJQE9nn6S7VJRQrChHPiBBhuwFs52w13ROI2hOfnCNZLGIoF0RzVb3cGBSPu40Ks'
+            },
+            body: '{\r\n  "channel": {\r\n    "id": "6873519355419446865"\r\n  },\r\n  "contact": {\r\n    "id": "6873520748825954928"\r\n  },\r\n  "content": {\r\n        "type": "text",\r\n        "payload": "From SFMC!"\r\n      }\r\n  }\r\n}'
+          
+          };
 
-};
+          request(options, function (error, response) {
+            if (error) throw new Error(error);
+            console.log(response.body);
+          });
 
 
 
