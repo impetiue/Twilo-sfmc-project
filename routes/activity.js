@@ -132,14 +132,12 @@ var options = {
       "id": "6873519355419446865"
     },
     "contact": {
-      "id": "6873950056681852179"
+      "id": "6873520748825954928"
     },
     "content": {
-      "type": "image",
-      "payload": {
-        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNtO2v3g_rVqjXrPdeoA-Xg2R8fqMdqeuDVQ&usqp=CAU"
+        "type": "text",
+        "payload": "From SFMC!"
       }
-    }
   })
 
 };
