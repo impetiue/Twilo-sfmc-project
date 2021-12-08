@@ -95,7 +95,7 @@ exports.execute = function (req, res) {
     console.log("1");	
     //console.log("Executed: "+req.body.inArguments[0]);
     
-    var requestBody = req.body.inArguments[0];
+   /* var requestBody = req.body.inArguments[0];
 
     const accountSid = requestBody.accountSid;
      console.log("accountSid=>>>>>>>> " + accountSid);
@@ -117,9 +117,32 @@ exports.execute = function (req, res) {
              to: to
            }) 
           .then(message => console.log(message.sid)) 
-          .done();
+          .done();*/
 
-    
+var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://api.amio.io/v1/messages',
+  'headers': {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer b89lWiLK72V66U1TglmWncd322nJQE9nn6S7VJRQrChHPiBBhuwFs52w13ROI2hOfnCNZLGIoF0RzVb3cGBSPu40Ks'
+  },
+  body: JSON.stringify({
+    "channel": {
+      "id": "6873519355419446865"
+    },
+    "contact": {
+      "id": "6873950056681852179"
+    },
+    "content": {
+      "type": "image",
+      "payload": {
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNtO2v3g_rVqjXrPdeoA-Xg2R8fqMdqeuDVQ&usqp=CAU"
+      }
+    }
+  })
+
+};
 
 
 
